@@ -7,3 +7,12 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<NonExistingComponent>
+    This should make the build fail if "TreatWarningsAsErrors" is true
+</NonExistingComponent>
+
+<NonExistingComponentWithAtKeyDirective @key="@("key")">
+    This should make the build fail as well if "TreatWarningsAsErrors" is true,
+    <b>but it does not</b>
+</NonExistingComponentWithAtKeyDirective>
